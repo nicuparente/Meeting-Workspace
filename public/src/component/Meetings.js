@@ -2,12 +2,14 @@ import React, { Component, Fragment } from 'react';
 import { Grid, Card, Image, Checkbox } from 'semantic-ui-react'
 import Topics from './Topics';
 import ActionItem from './ActionItem';
+import { connect } from 'react-redux';
+import { updateUser } from '../actions/user-actions'
 
 const MeetingInfo = ({ meeting }) => {
   return (
     <Fragment>
-      <h2 class="ui horizontal divider header">
-        <i class="calendar alternate outline icon" />
+      <h2 className="ui horizontal divider header">
+        <i className="calendar alternate outline icon" />
         Meeting Information:
       </h2>
       <Grid >
@@ -24,22 +26,21 @@ const MeetingInfo = ({ meeting }) => {
               </Card.Content>
             </Card>
           </Grid.Column>
-          <Grid.Column floated='right' width={5}>
+          <Grid.Column floated='right' width={8}>
             <span>
-              <h4>Name:</h4>
-              <p> Planning the Circus</p>
+              <h3>Install Azure Fasterer</h3>
               <h4>
-                <i class="clock outline icon" />
+                <i className="clock outline icon" />
                 Time:
                 </h4>
               <p> 11:00 AM PST</p>
               <h4>
-                <i class="calendar alternate outline icon" />
+                <i className="calendar alternate outline icon" />
                 Date:
                 </h4>
               <p> July 31, 2001</p>
               <h4>
-                <i class="location arrow icon" />
+                <i className="location arrow icon" />
                 Location:
                 </h4>
               <p> Bldg 43/22</p>
@@ -55,8 +56,8 @@ const MeetingInfo = ({ meeting }) => {
 const TopicHeader = () => {
   return (
     <Fragment>
-      <h2 class="ui horizontal divider header">
-        <i class="paper plane outline icon" />
+      <h2 className="ui horizontal divider header">
+        <i className="paper plane outline icon" />
         Topics
       </h2>
     </Fragment>
@@ -66,8 +67,8 @@ const TopicHeader = () => {
 const ActionItemsHeader = () => {
   return (
     <Fragment>
-      <h2 class="ui horizontal divider header">
-        <i class=" tasks icon" />
+      <h2 className="ui horizontal divider header">
+        <i className=" tasks icon" />
         After Meeting Action Items
       </h2>
     </Fragment>
@@ -75,18 +76,37 @@ const ActionItemsHeader = () => {
 }
 
 class Meetings extends Component {
+  constructor(props){
+    super(props);
+    this.onUpdateUser = this.onUpdateUser.bind(this);
+  }
+  onUpdateUser(){
+    this.props.onUpdateUser('Rafiki');
+  }
   render() {
+    console.log(this.props)
     return (
       <Fragment>
         <MeetingInfo />
         <TopicHeader />
         <Topics />
         <ActionItemsHeader />
-        <ActionItem />
+        <ActionItem />  
+        <h1 onClick={this.onUpdateUser}> Derp</h1>
       </Fragment>
     )
   }
 }
 
-export default Meetings;
+const mapStateToProps = state => ({
+  user: state.user,
+  meeting: state.meeting
+})
+
+const mapActionsToProps = {
+  onUpdateUser: updateUser
+};
+
+
+export default connect(mapStateToProps, mapActionsToProps)(Meetings);
 
