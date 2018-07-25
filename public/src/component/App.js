@@ -11,7 +11,6 @@ import Meetings from "./Meetings";
 
 class App extends Component {
   render() {
-    console.log(this.props)
     return (
       <BrowserRouter>
         <Fragment>
