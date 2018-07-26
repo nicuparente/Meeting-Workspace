@@ -6,7 +6,9 @@
   "author": "Nicu Parente <nicuparente@gmail.com>",
   "license": "",
   "scripts": {
-    "start": "node index.js"
+    "start": "yarn run build-semantic  && node index.js",
+    "build-semantic": "cd semantic && gulp build-css build-assets",
+    "watch-semantic": "cd semantic && yarn run build-semantic && gulp watch"
   },
   "dependencies": {
     "babel-plugin-autobind-class-methods": "^5.0.1",
@@ -30,7 +32,9 @@
   },
   "devDependencies": {
     "eslint": "^4.19.1",
-    "eslint-plugin-react": "^7.8.2"
+    "eslint-plugin-react": "^7.8.2",
+    "node-sass": "^4.9.2",
+    "semantic-ui": "^2.3.3"
   },
   "nodemonConfig": {
     "ignore": "dist/*"

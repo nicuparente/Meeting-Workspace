@@ -164,13 +164,17 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/semantic-ui-css/semantic.min.css":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../semantic/dist/semantic.min.css":[function(require,module,exports) {
 
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-},{"./themes/default/assets/images/flags.png":[["flags.36eb8ad8.png","../node_modules/semantic-ui-css/themes/default/assets/images/flags.png"],"../node_modules/semantic-ui-css/themes/default/assets/images/flags.png"],"./themes/default/assets/fonts/icons.eot":[["icons.5fe5f3d5.eot","../node_modules/semantic-ui-css/themes/default/assets/fonts/icons.eot"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/icons.eot"],"./themes/default/assets/fonts/icons.woff2":[["icons.cdfcde0e.woff2","../node_modules/semantic-ui-css/themes/default/assets/fonts/icons.woff2"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/icons.woff2"],"./themes/default/assets/fonts/icons.woff":[["icons.c9258da3.woff","../node_modules/semantic-ui-css/themes/default/assets/fonts/icons.woff"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/icons.woff"],"./themes/default/assets/fonts/icons.ttf":[["icons.ed20ef06.ttf","../node_modules/semantic-ui-css/themes/default/assets/fonts/icons.ttf"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/icons.ttf"],"./themes/default/assets/fonts/icons.svg":[["icons.5db158ef.svg","../node_modules/semantic-ui-css/themes/default/assets/fonts/icons.svg"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/icons.svg"],"./themes/default/assets/fonts/outline-icons.eot":[["outline-icons.048ad20e.eot","../node_modules/semantic-ui-css/themes/default/assets/fonts/outline-icons.eot"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/outline-icons.eot"],"./themes/default/assets/fonts/outline-icons.woff2":[["outline-icons.82627e72.woff2","../node_modules/semantic-ui-css/themes/default/assets/fonts/outline-icons.woff2"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/outline-icons.woff2"],"./themes/default/assets/fonts/outline-icons.woff":[["outline-icons.b8cb6602.woff","../node_modules/semantic-ui-css/themes/default/assets/fonts/outline-icons.woff"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/outline-icons.woff"],"./themes/default/assets/fonts/outline-icons.ttf":[["outline-icons.36a31014.ttf","../node_modules/semantic-ui-css/themes/default/assets/fonts/outline-icons.ttf"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/outline-icons.ttf"],"./themes/default/assets/fonts/outline-icons.svg":[["outline-icons.bebdabcf.svg","../node_modules/semantic-ui-css/themes/default/assets/fonts/outline-icons.svg"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/outline-icons.svg"],"./themes/default/assets/fonts/brand-icons.eot":[["brand-icons.f3c5706d.eot","../node_modules/semantic-ui-css/themes/default/assets/fonts/brand-icons.eot"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/brand-icons.eot"],"./themes/default/assets/fonts/brand-icons.woff2":[["brand-icons.be9f980e.woff2","../node_modules/semantic-ui-css/themes/default/assets/fonts/brand-icons.woff2"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/brand-icons.woff2"],"./themes/default/assets/fonts/brand-icons.woff":[["brand-icons.9981d98c.woff","../node_modules/semantic-ui-css/themes/default/assets/fonts/brand-icons.woff"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/brand-icons.woff"],"./themes/default/assets/fonts/brand-icons.ttf":[["brand-icons.4f05cfa3.ttf","../node_modules/semantic-ui-css/themes/default/assets/fonts/brand-icons.ttf"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/brand-icons.ttf"],"./themes/default/assets/fonts/brand-icons.svg":[["brand-icons.525ab30d.svg","../node_modules/semantic-ui-css/themes/default/assets/fonts/brand-icons.svg"],"../node_modules/semantic-ui-css/themes/default/assets/fonts/brand-icons.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/object-assign/index.js":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./themes/default/assets/images/flags.png":[["flags.52405281.png","../semantic/dist/themes/default/assets/images/flags.png"],"../semantic/dist/themes/default/assets/images/flags.png"],"./themes/default/assets/fonts/icons.eot":[["icons.bd961020.eot","../semantic/dist/themes/default/assets/fonts/icons.eot"],"../semantic/dist/themes/default/assets/fonts/icons.eot"],"./themes/default/assets/fonts/icons.woff2":[["icons.0a80f2b8.woff2","../semantic/dist/themes/default/assets/fonts/icons.woff2"],"../semantic/dist/themes/default/assets/fonts/icons.woff2"],"./themes/default/assets/fonts/icons.woff":[["icons.87915777.woff","../semantic/dist/themes/default/assets/fonts/icons.woff"],"../semantic/dist/themes/default/assets/fonts/icons.woff"],"./themes/default/assets/fonts/icons.ttf":[["icons.54d58f7f.ttf","../semantic/dist/themes/default/assets/fonts/icons.ttf"],"../semantic/dist/themes/default/assets/fonts/icons.ttf"],"./themes/default/assets/fonts/icons.svg":[["icons.9b7acb44.svg","../semantic/dist/themes/default/assets/fonts/icons.svg"],"../semantic/dist/themes/default/assets/fonts/icons.svg"],"./themes/default/assets/fonts/outline-icons.eot":[["outline-icons.8bcef3ce.eot","../semantic/dist/themes/default/assets/fonts/outline-icons.eot"],"../semantic/dist/themes/default/assets/fonts/outline-icons.eot"],"./themes/default/assets/fonts/outline-icons.woff2":[["outline-icons.f0f13813.woff2","../semantic/dist/themes/default/assets/fonts/outline-icons.woff2"],"../semantic/dist/themes/default/assets/fonts/outline-icons.woff2"],"./themes/default/assets/fonts/outline-icons.woff":[["outline-icons.4fd75020.woff","../semantic/dist/themes/default/assets/fonts/outline-icons.woff"],"../semantic/dist/themes/default/assets/fonts/outline-icons.woff"],"./themes/default/assets/fonts/outline-icons.ttf":[["outline-icons.15d65c11.ttf","../semantic/dist/themes/default/assets/fonts/outline-icons.ttf"],"../semantic/dist/themes/default/assets/fonts/outline-icons.ttf"],"./themes/default/assets/fonts/outline-icons.svg":[["outline-icons.4eaa5252.svg","../semantic/dist/themes/default/assets/fonts/outline-icons.svg"],"../semantic/dist/themes/default/assets/fonts/outline-icons.svg"],"./themes/default/assets/fonts/brand-icons.eot":[["brand-icons.7989ee2d.eot","../semantic/dist/themes/default/assets/fonts/brand-icons.eot"],"../semantic/dist/themes/default/assets/fonts/brand-icons.eot"],"./themes/default/assets/fonts/brand-icons.woff2":[["brand-icons.c04d86ee.woff2","../semantic/dist/themes/default/assets/fonts/brand-icons.woff2"],"../semantic/dist/themes/default/assets/fonts/brand-icons.woff2"],"./themes/default/assets/fonts/brand-icons.woff":[["brand-icons.bb3ae7f5.woff","../semantic/dist/themes/default/assets/fonts/brand-icons.woff"],"../semantic/dist/themes/default/assets/fonts/brand-icons.woff"],"./themes/default/assets/fonts/brand-icons.ttf":[["brand-icons.074cc233.ttf","../semantic/dist/themes/default/assets/fonts/brand-icons.ttf"],"../semantic/dist/themes/default/assets/fonts/brand-icons.ttf"],"./themes/default/assets/fonts/brand-icons.svg":[["brand-icons.238066d6.svg","../semantic/dist/themes/default/assets/fonts/brand-icons.svg"],"../semantic/dist/themes/default/assets/fonts/brand-icons.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/css/mains.scss":[function(require,module,exports) {
+
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/object-assign/index.js":[function(require,module,exports) {
 /*
 object-assign
 (c) Sindre Sorhus
@@ -24668,7 +24672,7 @@ var _MemoryRouter2 = _interopRequireDefault(_MemoryRouter);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _MemoryRouter2.default; // Written in this round about way for babel-transform-imports
-},{"react-router/es/MemoryRouter":"../node_modules/react-router/es/MemoryRouter.js"}],"../node_modules/react-router/node_modules/isarray/index.js":[function(require,module,exports) {
+},{"react-router/es/MemoryRouter":"../node_modules/react-router/es/MemoryRouter.js"}],"../node_modules/isarray/index.js":[function(require,module,exports) {
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
@@ -25101,7 +25105,7 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
 
-},{"isarray":"../node_modules/react-router/node_modules/isarray/index.js"}],"../node_modules/react-router/es/matchPath.js":[function(require,module,exports) {
+},{"isarray":"../node_modules/isarray/index.js"}],"../node_modules/react-router/es/matchPath.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -67317,7 +67321,7 @@ var Navbar = function (_Component) {
 
       return _react2.default.createElement(
         _semanticUiReact.Segment,
-        null,
+        { className: "header-nav" },
         _react2.default.createElement(
           _semanticUiReact.Menu,
           { secondary: true },
@@ -67328,7 +67332,7 @@ var Navbar = function (_Component) {
             },
             _react2.default.createElement(
               _semanticUiReact.Header,
-              { as: "h3" },
+              { as: "h2" },
               _react2.default.createElement(_semanticUiReact.Icon, { size: "massive", name: "microsoft" }),
               "Workspace"
             )
@@ -67610,8 +67614,12 @@ var Topics = function (_Component) {
                 _react2.default.createElement(
                   _semanticUiReact.Accordion.Title,
                   { active: activeIndex === topicIndex, index: topicIndex, onClick: _this2.handleClick },
-                  _react2.default.createElement(_semanticUiReact.Icon, { name: 'dropdown' }),
-                  topic.title
+                  _react2.default.createElement(
+                    _semanticUiReact.Header,
+                    { as: 'h2' },
+                    _react2.default.createElement(_semanticUiReact.Icon, { name: 'dropdown' }),
+                    topic.title
+                  )
                 ),
                 _react2.default.createElement(
                   _semanticUiReact.Accordion.Content,
@@ -68347,7 +68355,7 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-},{"process":"../node_modules/process/browser.js"}],"../node_modules/replace-ext/index.js":[function(require,module,exports) {
+},{"process":"../node_modules/process/browser.js"}],"../node_modules/vfile/node_modules/replace-ext/index.js":[function(require,module,exports) {
 'use strict';
 
 var path = require('path');
@@ -68561,7 +68569,7 @@ function assertPath(path, name) {
   }
 }
 
-},{"path":"../node_modules/path-browserify/index.js","replace-ext":"../node_modules/replace-ext/index.js","is-buffer":"../node_modules/is-buffer/index.js","process":"../node_modules/process/browser.js"}],"../node_modules/vfile/index.js":[function(require,module,exports) {
+},{"path":"../node_modules/path-browserify/index.js","replace-ext":"../node_modules/vfile/node_modules/replace-ext/index.js","is-buffer":"../node_modules/is-buffer/index.js","process":"../node_modules/process/browser.js"}],"../node_modules/vfile/index.js":[function(require,module,exports) {
 'use strict';
 
 var VMessage = require('vfile-message');
@@ -78695,7 +78703,7 @@ var MeetingInfo = function MeetingInfo(_ref) {
                   null,
                   _react2.default.createElement(
                     _semanticUiReact.List.Header,
-                    { as: 'h2', size: 'large' },
+                    { as: 'h4', size: 'large' },
                     'Time'
                   ),
                   _react2.default.createElement(
@@ -78714,7 +78722,7 @@ var MeetingInfo = function MeetingInfo(_ref) {
                   null,
                   _react2.default.createElement(
                     _semanticUiReact.List.Header,
-                    { as: 'h2', size: 'large' },
+                    { as: 'h4', size: 'large' },
                     'Date'
                   ),
                   _react2.default.createElement(
@@ -78733,7 +78741,7 @@ var MeetingInfo = function MeetingInfo(_ref) {
                   null,
                   _react2.default.createElement(
                     _semanticUiReact.List.Header,
-                    { as: 'h2', size: 'large' },
+                    { as: 'h4', size: 'large' },
                     'Location'
                   ),
                   _react2.default.createElement(
@@ -78958,7 +78966,9 @@ function meetingReducer() {
 },{"../actions/meeting-actions":"src/actions/meeting-actions.js","../actions/action-item":"src/actions/action-item.js"}],"src/main.js":[function(require,module,exports) {
 "use strict";
 
-require("semantic-ui-css/semantic.min.css");
+require("../../semantic/dist/semantic.min.css");
+
+require("./css/mains.scss");
 
 var _react = require("react");
 
@@ -78992,14 +79002,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //Reducers
 
-
 //Libraries
+//CSS
 var allReducers = (0, _redux.combineReducers)({
   user: _userReducer2.default,
   meeting: _meetingReducer2.default
 });
 //App Components
-//CSS
 
 
 var allStoreEnhachers = (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default), window.devToolsExtension && window.devToolsExtension());
@@ -79120,7 +79129,7 @@ _reactDom2.default.render(_react2.default.createElement(
   { store: store },
   _react2.default.createElement(_App2.default, null)
 ), root);
-},{"semantic-ui-css/semantic.min.css":"../node_modules/semantic-ui-css/semantic.min.css","react":"../node_modules/react/index.js","redux":"../node_modules/redux/es/redux.js","react-redux":"../node_modules/react-redux/es/index.js","react-dom":"../node_modules/react-dom/index.js","redux-thunk":"../node_modules/redux-thunk/es/index.js","./component/App":"src/component/App.js","./reducers/user-reducer":"src/reducers/user-reducer.js","./reducers/meeting-reducer":"src/reducers/meeting-reducer.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../../semantic/dist/semantic.min.css":"../semantic/dist/semantic.min.css","./css/mains.scss":"src/css/mains.scss","react":"../node_modules/react/index.js","redux":"../node_modules/redux/es/redux.js","react-redux":"../node_modules/react-redux/es/index.js","react-dom":"../node_modules/react-dom/index.js","redux-thunk":"../node_modules/redux-thunk/es/index.js","./component/App":"src/component/App.js","./reducers/user-reducer":"src/reducers/user-reducer.js","./reducers/meeting-reducer":"src/reducers/meeting-reducer.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -79149,7 +79158,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '49188' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64893' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
