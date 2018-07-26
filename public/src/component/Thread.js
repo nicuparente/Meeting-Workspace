@@ -1,21 +1,57 @@
 import React, { Component, Fragment } from 'react'
 import { Button, Comment, Form, Header } from 'semantic-ui-react'
-import { comment } from '../../../node_modules/postcss';
+import { connect } from 'react-redux';
 
 class Thread extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      comments: this.props.thread
+      comments: this.props.thread || [],
+      user: this.props.user,
+      form:{
+        commentDescription: ''
+      }
     }
+    this.onHandleChange = this.onHandleChange.bind(this);
+    this.onHandleSubmit = this.onHandleSubmit.bind(this);
   }
+
+
+  onHandleSubmit(event) {
+    event.preventDefault()
+    this.setState({
+      comments: [...this.state.comments,{
+        "author": this.state.user.name,
+        "id": this.state.user.id,
+        "email": this.state.user.email,
+        "profileImage":this.state.user.profileImageUrl,
+        "date": 1532457008,
+        "content": this.state.form.commentDescription,
+        "replies": []
+      }],
+      form:{
+        commentDescription: ''
+      }
+    })
+  }
+
+
+  onHandleChange(event) {
+    let newFormValue = this.state.form;
+    console.log(event.target.value)
+    newFormValue[event.target.id] = event.target.value;
+    this.setState({
+      form: newFormValue
+    });
+  }
+
   render() {
     return (
       <Fragment>
         <Header as='h4' dividing>
-          <p></p>
           Comments
         </Header>
+        
         <Comment.Group size='small'>
           {
             this.state.comments ?
@@ -41,9 +77,14 @@ class Thread extends Component {
               </Fragment> :
               <p><i>No comments yet! Be the first to add one! </i></p>
           }
-          <Form reply size='tiny'>
-            <Form.TextArea />
-            <Button content='Add Comment' labelPosition='left' icon='edit' primary />
+        <Header as='h4' dividing>
+          Add Comment:
+        </Header>
+          <Form onSubmit={this.onHandleSubmit} size='tiny'>
+            <Form.TextArea 
+              id="commentDescription" 
+              onChange={this.onHandleChange}/>
+            <Button content='Create' labelPosition='left' icon='edit' primary size='medium'/>
           </Form>
         </Comment.Group>
       </Fragment>
@@ -52,4 +93,9 @@ class Thread extends Component {
 
 }
 
-export default Thread;
+const mapStateToProps = state => ({
+  user: state.user,
+  meeting: state.meeting
+})
+
+export default connect(mapStateToProps)(Thread);

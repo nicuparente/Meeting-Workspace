@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 
 //Components
 import Navbar from "./Navbar";
-import Home from "./Home";
 import Meetings from "./Meetings";
 
 
@@ -15,8 +14,7 @@ class App extends Component {
       <BrowserRouter>
         <Fragment>
           <Navbar />
-          <Route exact={true} path="/" component={Home} />
-          <Route path="/meetings" component={Meetings} />
+          <Route path="/" component={Meetings} />
         </Fragment>
       </BrowserRouter>
     );
