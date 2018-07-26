@@ -1,8 +1,7 @@
 'use strict';
 
-const express = require('../../Library/Caches/typescript/2.9/node_modules/@types/express');
+const express = require('express');
 const app = express();
-
 
 const Bundler = require('parcel-bundler');
 const bundler = new Bundler('./public/index.html');

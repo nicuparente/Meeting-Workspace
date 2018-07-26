@@ -1,51 +1,83 @@
 import React, { Component, Fragment } from 'react';
-import { Grid, Card, Image, Checkbox } from 'semantic-ui-react'
+import { Grid, Card, Image, Segment, Container, List, Header, Divider } from 'semantic-ui-react'
 import Topics from './Topics';
-import ActionItem from './ActionItem';
+import ActionItems from './ActionItems';
+import { connect } from 'react-redux';
+import { updateUser } from '../actions/user-actions'
+import EpochConverter from '../lib/epoch-converter';
 
 const MeetingInfo = ({ meeting }) => {
+  console.log(meeting)
   return (
     <Fragment>
-      <h2 class="ui horizontal divider header">
-        <i class="calendar alternate outline icon" />
+      <h2 className="ui horizontal divider header">
+        <i className="calendar alternate outline icon" />
         Meeting Information:
       </h2>
-      <Grid >
+      <Grid columns={2} relaxed='very' padded='horizontally'>
         <Grid.Row>
-          <Grid.Column width={1} />
-          <Grid.Column floated='left' width={4}>
-            <Card>
-              <Image size='large' src='https://avatars0.githubusercontent.com/u/7001751?s=400&u=a56f22c679e54acf7d8b7064f3d26fb67585cf47&v=4' />
-              <Card.Content>
-                <Card.Header>Nicu</Card.Header>
-                <Card.Meta>
-                  <span className='date'>Organizer</span>
-                </Card.Meta>
-              </Card.Content>
-            </Card>
+          <Grid.Column >
+            <Segment raised>
+              <Header as='h2'>Participants</Header>
+              <Divider />
+              <List relaxed='very' divided>
+                <List.Item>
+                  <Image avatar src={meeting.organizer.profileImage} />
+                  <List.Content>
+                    <List.Header as='a'>{meeting.organizer.name} (Organizer) </List.Header>
+                    <List.Description>{meeting.organizer.email} </List.Description>
+                  </List.Content>
+                </List.Item>
+                {
+                  meeting.participants.map((participant, index) => {
+                    if (participant.name === meeting.organizer.name) {
+                      return;
+                    }
+                    return (
+                      <Fragment>
+                        <List.Item>
+                          <Image avatar src={participant.profileImage} />
+                          <List.Content>
+                            <List.Header as='a'>{participant.name} </List.Header>
+                            <List.Description>{participant.email}</List.Description>
+                          </List.Content>
+                        </List.Item>
+                      </Fragment>
+                    )
+                  })
+                }
+              </List>
+            </Segment>
           </Grid.Column>
-          <Grid.Column floated='right' width={5}>
-            <span>
-              <h4>Name:</h4>
-              <p> Planning the Circus</p>
-              <h4>
-                <i class="clock outline icon" />
-                Time:
-                </h4>
-              <p> 11:00 AM PST</p>
-              <h4>
-                <i class="calendar alternate outline icon" />
-                Date:
-                </h4>
-              <p> July 31, 2001</p>
-              <h4>
-                <i class="location arrow icon" />
-                Location:
-                </h4>
-              <p> Bldg 43/22</p>
-            </span>
+          <Grid.Column>
+            <Segment raised>
+              <Header as='h2' textAlign='center'>{meeting.name}</Header>
+              <Divider />
+              <List relaxed divided>
+                <List.Item>
+                  <List.Icon name='clock outline' size='large' verticalAlign='middle' />
+                  <List.Content>
+                    <List.Header as='h2' size='large'>Time</List.Header>
+                    <List.Description as='a'>{EpochConverter(meeting.date).hourMinutes}</List.Description>
+                  </List.Content>
+                </List.Item>
+                <List.Item>
+                  <List.Icon name='calendar alternate outline' size='large' verticalAlign='middle' />
+                  <List.Content>
+                    <List.Header as='h2' size='large'>Date</List.Header>
+                    <List.Description as='a'>{EpochConverter(meeting.date).monthDayYear}</List.Description>
+                  </List.Content>
+                </List.Item>
+                <List.Item>
+                  <List.Icon name='location arrow' size='large' verticalAlign='middle' />
+                  <List.Content>
+                    <List.Header as='h2' size='large'>Location</List.Header>
+                    <List.Description as='a'>{meeting.location}</List.Description>
+                  </List.Content>
+                </List.Item>
+              </List>
+            </Segment>
           </Grid.Column>
-          <Grid.Column width={1} />
         </Grid.Row>
       </Grid>
     </Fragment>
@@ -55,8 +87,8 @@ const MeetingInfo = ({ meeting }) => {
 const TopicHeader = () => {
   return (
     <Fragment>
-      <h2 class="ui horizontal divider header">
-        <i class="paper plane outline icon" />
+      <h2 className="ui horizontal divider header section">
+        <i className="paper plane outline icon" />
         Topics
       </h2>
     </Fragment>
@@ -66,27 +98,41 @@ const TopicHeader = () => {
 const ActionItemsHeader = () => {
   return (
     <Fragment>
-      <h2 class="ui horizontal divider header">
-        <i class=" tasks icon" />
-        After Meeting Action Items
+      <h2 className="ui horizontal divider header section">
+        <i className=" tasks icon" />
+        Action Items
       </h2>
     </Fragment>
   )
 }
 
 class Meetings extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <Fragment>
-        <MeetingInfo />
+        <MeetingInfo meeting={this.props.meeting} />
         <TopicHeader />
-        <Topics />
+        <Topics topics={this.props.meeting.topics} />
         <ActionItemsHeader />
-        <ActionItem />
+        <ActionItems actionItems={this.props.meeting.actionItems} />
       </Fragment>
     )
   }
 }
 
-export default Meetings;
+const mapStateToProps = state => ({
+  user: state.user,
+  meeting: state.meeting
+})
+
+const mapActionsToProps = {
+  onUpdateUser: updateUser
+};
+
+
+export default connect(mapStateToProps, mapActionsToProps)(Meetings);
 

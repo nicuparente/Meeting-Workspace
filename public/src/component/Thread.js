@@ -1,77 +1,101 @@
-import React from 'react'
+import React, { Component, Fragment } from 'react'
 import { Button, Comment, Form, Header } from 'semantic-ui-react'
+import { connect } from 'react-redux';
 
-const Thread = () => (
-  <Comment.Group threaded>
-    <Header as='h3' dividing>
-      Comments
-    </Header>
+class Thread extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      comments: this.props.thread || [],
+      user: this.props.user,
+      form:{
+        commentDescription: ''
+      }
+    }
+    this.onHandleChange = this.onHandleChange.bind(this);
+    this.onHandleSubmit = this.onHandleSubmit.bind(this);
+  }
 
-    <Comment>
-      <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
-      <Comment.Content>
-        <Comment.Author as='a'>Matt</Comment.Author>
-        <Comment.Metadata>
-          <span>Today at 5:42PM</span>
-        </Comment.Metadata>
-        <Comment.Text>What does that even mean?</Comment.Text>
-        <Comment.Actions>
-          <a>Reply</a>
-        </Comment.Actions>
-      </Comment.Content>
-    </Comment>
 
-    <Comment>
-      <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' />
-      <Comment.Content>
-        <Comment.Author as='a'>Elliot Fu</Comment.Author>
-        <Comment.Metadata>
-          <span>Yesterday at 12:30AM</span>
-        </Comment.Metadata>
-        <Comment.Text>
-          <p>This has been very useful for my research. Thanks as well!</p>
-        </Comment.Text>
-        <Comment.Actions>
-          <a>Reply</a>
-        </Comment.Actions>
-      </Comment.Content>
+  onHandleSubmit(event) {
+    event.preventDefault()
+    this.setState({
+      comments: [...this.state.comments,{
+        "author": this.state.user.name,
+        "id": this.state.user.id,
+        "email": this.state.user.email,
+        "profileImage":this.state.user.profileImageUrl,
+        "date": 1532457008,
+        "content": this.state.form.commentDescription,
+        "replies": []
+      }],
+      form:{
+        commentDescription: ''
+      }
+    })
+  }
 
-      <Comment.Group>
-        <Comment>
-          <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg' />
-          <Comment.Content>
-            <Comment.Author as='a'>Jenny Hess</Comment.Author>
-            <Comment.Metadata>
-              <span>Just now</span>
-            </Comment.Metadata>
-            <Comment.Text>Elliot you are always so right :)</Comment.Text>
-            <Comment.Actions>
-              <a>Reply</a>
-            </Comment.Actions>
-          </Comment.Content>
-        </Comment>
-      </Comment.Group>
-    </Comment>
 
-    <Comment>
-      <Comment.Avatar as='a' src='https://react.semantic-ui.com/images/avatar/small/joe.jpg' />
-      <Comment.Content>
-        <Comment.Author as='a'>Joe Henderson</Comment.Author>
-        <Comment.Metadata>
-          <span>5 days ago</span>
-        </Comment.Metadata>
-        <Comment.Text>Dude, this is awesome. Thanks so much</Comment.Text>
-        <Comment.Actions>
-          <a>Reply</a>
-        </Comment.Actions>
-      </Comment.Content>
-    </Comment>
+  onHandleChange(event) {
+    let newFormValue = this.state.form;
+    console.log(event.target.value)
+    newFormValue[event.target.id] = event.target.value;
+    this.setState({
+      form: newFormValue
+    });
+  }
 
-    <Form reply>
-      <Form.TextArea />
-      <Button content='Add Reply' labelPosition='left' icon='edit' primary />
-    </Form>
-  </Comment.Group>
-)
+  render() {
+    return (
+      <Fragment>
+        <Header as='h4' dividing>
+          Comments
+        </Header>
+        
+        <Comment.Group size='small'>
+          {
+            this.state.comments ?
+              <Fragment>
+                {
+                  this.state.comments.map((comment, index) => {
+                    return (
+                      <Fragment>
+                        <Comment>
+                          <Comment.Avatar as='a' src={comment.profileImage} />
+                          <Comment.Content>
+                            <Comment.Author as='a'>{comment.author}</Comment.Author>
+                            <Comment.Metadata>
+                              <span>Today at 5:42PM</span>
+                            </Comment.Metadata>
+                            <Comment.Text>{comment.content}</Comment.Text>
+                          </Comment.Content>
+                        </Comment>
+                      </Fragment>
+                    )
+                  })
+                }
+              </Fragment> :
+              <p><i>No comments yet! Be the first to add one! </i></p>
+          }
+        <Header as='h4' dividing>
+          Add Comment:
+        </Header>
+          <Form onSubmit={this.onHandleSubmit} size='tiny'>
+            <Form.TextArea 
+              id="commentDescription" 
+              onChange={this.onHandleChange}/>
+            <Button content='Create' labelPosition='left' icon='edit' primary size='medium'/>
+          </Form>
+        </Comment.Group>
+      </Fragment>
+    )
+  }
 
-export default Thread;
+}
+
+const mapStateToProps = state => ({
+  user: state.user,
+  meeting: state.meeting
+})
+
+export default connect(mapStateToProps)(Thread);
