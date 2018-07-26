@@ -11,12 +11,12 @@ export default class Navbar extends Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Segment >
+      <Segment className='header-nav'>
         <Menu secondary>
           <Menu.Item
               name="home"
             >
-            <Header as='h3'>
+            <Header as='h2'>
               <Icon size='massive' name="microsoft"/>
               Workspace
             </Header>

@@ -1,6 +1,6 @@
 //CSS
-import "semantic-ui-css/semantic.min.css";
-
+import "../../semantic/dist/semantic.min.css";
+import "./css/mains.scss"
 //Libraries
 import React, { Component, Fragment } from "react";
 import { applyMiddleware, compose, combineReducers, createStore } from "redux";

@@ -57,21 +57,21 @@ const MeetingInfo = ({ meeting }) => {
                 <List.Item>
                   <List.Icon name='clock outline' size='large' verticalAlign='middle' />
                   <List.Content>
-                    <List.Header as='h2' size='large'>Time</List.Header>
+                    <List.Header as='h4' size='large'>Time</List.Header>
                     <List.Description as='a'>{EpochConverter(meeting.date).hourMinutes}</List.Description>
                   </List.Content>
                 </List.Item>
                 <List.Item>
                   <List.Icon name='calendar alternate outline' size='large' verticalAlign='middle' />
                   <List.Content>
-                    <List.Header as='h2' size='large'>Date</List.Header>
+                    <List.Header as='h4' size='large'>Date</List.Header>
                     <List.Description as='a'>{EpochConverter(meeting.date).monthDayYear}</List.Description>
                   </List.Content>
                 </List.Item>
                 <List.Item>
                   <List.Icon name='location arrow' size='large' verticalAlign='middle' />
                   <List.Content>
-                    <List.Header as='h2' size='large'>Location</List.Header>
+                    <List.Header as='h4' size='large'>Location</List.Header>
                     <List.Description as='a'>{meeting.location}</List.Description>
                   </List.Content>
                 </List.Item>
