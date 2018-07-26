@@ -67590,7 +67590,7 @@ var Topics = function (_Component) {
     };
 
     _this.state = {
-      activeIndex: 0,
+      activeIndex: -1,
       topics: _this.props.topics
     };
     return _this;
@@ -79102,7 +79102,7 @@ var store = (0, _redux.createStore)(allReducers, {
         "email": "rachel@boop.com",
         "profileImage": "https://react.semantic-ui.com/images/avatar/small/rachel.png"
       },
-      "description": "Please follow up on the bacon issue [VSTS - #00928](https://www.microsoft.com)",
+      "description": "Please follow up on the CI\CD issue [VSTS - #00928](https://www.microsoft.com)",
       "createdBy": {
         "name": "Matt",
         "id": "525555df12a54s1osdfmnjg",
@@ -79117,7 +79117,7 @@ var store = (0, _redux.createStore)(allReducers, {
         "email": "nicu@parente.com",
         "profileImage": "https://avatars0.githubusercontent.com/u/7001751?s=400&u=a56f22c679e54acf7d8b7064f3d26fb67585cf47&v=4"
       },
-      "description": "Create a proposal for the potato connectivity issue [#532123](https://www.microsoft.com)",
+      "description": "Create a proposal for the RedBull connectivity issue [#532123](https://www.microsoft.com)",
       "createdBy": {
         "name": "Matt",
         "id": "525555df12a54s1osdfmnjg",
@@ -79164,7 +79164,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61218' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '56048' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

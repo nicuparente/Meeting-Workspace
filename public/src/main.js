@@ -123,7 +123,7 @@ const store = createStore(
             "email": "rachel@boop.com",
             "profileImage": "https://react.semantic-ui.com/images/avatar/small/rachel.png"
           },
-          "description": "Please follow up on the bacon issue [VSTS - #00928](https://www.microsoft.com)",
+          "description": "Please follow up on the CI\CD issue [VSTS - #00928](https://www.microsoft.com)",
           "createdBy": {
             "name": "Matt",
             "id": "525555df12a54s1osdfmnjg",
@@ -139,7 +139,7 @@ const store = createStore(
             "email": "nicu@parente.com",
             "profileImage": "https://avatars0.githubusercontent.com/u/7001751?s=400&u=a56f22c679e54acf7d8b7064f3d26fb67585cf47&v=4"
           },
-          "description": "Create a proposal for the potato connectivity issue [#532123](https://www.microsoft.com)",
+          "description": "Create a proposal for the RedBull connectivity issue [#532123](https://www.microsoft.com)",
           "createdBy": {
             "name": "Matt",
             "id": "525555df12a54s1osdfmnjg",
