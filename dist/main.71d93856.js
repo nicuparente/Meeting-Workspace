@@ -67285,6 +67285,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _semanticUiReact = require("semantic-ui-react");
 
+require("../css/mains.scss");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -67292,6 +67294,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var navBarStyle = {
+  backgroundColor: "#b67cef"
+};
 
 var Navbar = function (_Component) {
   _inherits(Navbar, _Component);
@@ -67321,7 +67327,7 @@ var Navbar = function (_Component) {
 
       return _react2.default.createElement(
         _semanticUiReact.Segment,
-        { className: "header-nav" },
+        { style: navBarStyle, className: "header-nav" },
         _react2.default.createElement(
           _semanticUiReact.Menu,
           { secondary: true },
@@ -67374,7 +67380,7 @@ var Navbar = function (_Component) {
 }(_react.Component);
 
 exports.default = Navbar;
-},{"react":"../node_modules/react/index.js","semantic-ui-react":"../node_modules/semantic-ui-react/dist/es/index.js"}],"src/component/Thread.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","semantic-ui-react":"../node_modules/semantic-ui-react/dist/es/index.js","../css/mains.scss":"src/css/mains.scss"}],"src/component/Thread.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -67584,7 +67590,7 @@ var Topics = function (_Component) {
     };
 
     _this.state = {
-      activeIndex: 2,
+      activeIndex: 0,
       topics: _this.props.topics
     };
     return _this;
@@ -79053,15 +79059,7 @@ var store = (0, _redux.createStore)(allReducers, {
       "profileImage": "https://react.semantic-ui.com/images/avatar/small/joe.jpg"
     }],
     "topics": [{
-      "title": "Where are the servers coming from?",
-      "description": "From buying potatoes?",
-      "threads": []
-    }, {
-      "title": "Improvements from previous sprint",
-      "description": "Bacon ipsum dolor amet turkey jerky kevin leberkas boudin. Meatloaf tri-tip swine sirloin. Kielbasa pig doner beef ribs biltong cow chuck capicola. Rump pig shoulder porchetta. Chuck tail sausage brisket, pastrami shankle burgdoggen tenderloin leberkas turkey. Picanha bresaola capicola pork loin, flank tri-tip ham swine sirloin prosciutto. Ground round chuck jerky turkey pork chop",
-      "threads": []
-    }, {
-      "title": "How dow we install Azure?",
+      "title": "How do we install Azure?",
       "description": "The current documentation about installing Azure states that we need to buy potatoes. Lots and lots of potatoes. This is becoming a scalablity issue due to the sheer amount of excess fries we get from the potatoes.",
       "thread": [{
         "author": "Matt",
@@ -79088,6 +79086,14 @@ var store = (0, _redux.createStore)(allReducers, {
         "content": "#PlusOneHeartReactsOnly",
         "replies": []
       }]
+    }, {
+      "title": "Explore the possibility of using Red Bull to speed up servers during peak hours",
+      "description": "Rumor has it pouring Red Bull on server racks overclocks the servers. Since we already placed a datacenter  underwater, so why not?",
+      "threads": []
+    }, {
+      "title": "CI/CD Improvements for the next semester",
+      "description": "Bacon ipsum dolor amet turkey jerky kevin leberkas boudin. Meatloaf tri-tip swine sirloin. Kielbasa pig doner beef ribs biltong cow chuck capicola. Rump pig shoulder porchetta. Chuck tail sausage brisket, pastrami shankle burgdoggen tenderloin leberkas turkey. Picanha bresaola capicola pork loin, flank tri-tip ham swine sirloin prosciutto. Ground round chuck jerky turkey pork chop",
+      "threads": []
     }],
     "actionItems": [{
       "assignedTo": {
@@ -79158,7 +79164,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64893' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61218' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

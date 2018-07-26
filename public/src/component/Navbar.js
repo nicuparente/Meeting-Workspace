@@ -1,6 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { Input, Menu, Segment, Header, Image, Icon } from "semantic-ui-react";
+import "../css/mains.scss"
 
+
+const navBarStyle = {
+  backgroundColor: "#b67cef",
+};
 export default class Navbar extends Component {
   state = { activeItem: "meeting" };
 
@@ -11,7 +16,7 @@ export default class Navbar extends Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Segment className='header-nav'>
+      <Segment style={navBarStyle} className='header-nav'>
         <Menu secondary>
           <Menu.Item
               name="home"
@@ -42,7 +47,6 @@ export default class Navbar extends Component {
             </Menu.Item>
           </Menu.Menu>
         </Menu>
-
       </Segment>
     );
   }

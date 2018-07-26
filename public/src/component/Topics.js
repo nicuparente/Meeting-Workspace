@@ -6,7 +6,7 @@ export default class Topics extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeIndex: 2,
+      activeIndex: 0,
       topics: this.props.topics
     }
   }
