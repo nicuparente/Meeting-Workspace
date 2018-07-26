@@ -72,17 +72,7 @@ const store = createStore(
       ],
       "topics": [
         {
-          "title": "Where are the servers coming from?",
-          "description": "From buying potatoes?",
-          "threads": []
-        },
-        {
-          "title": "Improvements from previous sprint",
-          "description": "Bacon ipsum dolor amet turkey jerky kevin leberkas boudin. Meatloaf tri-tip swine sirloin. Kielbasa pig doner beef ribs biltong cow chuck capicola. Rump pig shoulder porchetta. Chuck tail sausage brisket, pastrami shankle burgdoggen tenderloin leberkas turkey. Picanha bresaola capicola pork loin, flank tri-tip ham swine sirloin prosciutto. Ground round chuck jerky turkey pork chop",
-          "threads": []
-        },
-        {
-          "title": "How dow we install Azure?",
+          "title": "How do we install Azure?",
           "description": "The current documentation about installing Azure states that we need to buy potatoes. Lots and lots of potatoes. This is becoming a scalablity issue due to the sheer amount of excess fries we get from the potatoes.",
           "thread": [
             {
@@ -113,7 +103,17 @@ const store = createStore(
               "replies": []
             }
           ]
-        }
+        },
+        {
+          "title": "Explore the possibility of using Red Bull to speed up servers during peak hours",
+          "description": "Rumor has it pouring Red Bull on server racks overclocks the servers. Since we already placed a datacenter  underwater, so why not?",
+          "threads": []
+        },
+        {
+          "title": "CI/CD Improvements for the next semester",
+          "description": "Bacon ipsum dolor amet turkey jerky kevin leberkas boudin. Meatloaf tri-tip swine sirloin. Kielbasa pig doner beef ribs biltong cow chuck capicola. Rump pig shoulder porchetta. Chuck tail sausage brisket, pastrami shankle burgdoggen tenderloin leberkas turkey. Picanha bresaola capicola pork loin, flank tri-tip ham swine sirloin prosciutto. Ground round chuck jerky turkey pork chop",
+          "threads": []
+        },
       ],
       "actionItems": [
         {
